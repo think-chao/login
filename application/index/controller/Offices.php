@@ -18,6 +18,7 @@ class offices extends Base{
         $data=db("office")->select();
         $this->assign("data",$data);
         return $this->fetch();
+        //
     }
 
     public function addofficer(){
