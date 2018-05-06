@@ -18,7 +18,7 @@ class Login extends Base{
     function checkLogin(){
 
     $appid="wx8bea4fc29893bc93";
-    $secrect="6570e9c2e98789824b7ca8a57413f638";
+    $secret="6570e9c2e98789824b7ca8a57413f638";
     $code=$this->request->param('code');
    
     $encryptedData = $this->request->param('encryptedData');
@@ -54,7 +54,7 @@ class Login extends Base{
      * （使用官方提供的方法即可）
      */
     $pc = new WXBizDataCrypt($this->appid, $sessionKey);
-    $errCode = $pc->decryptData($encryptedData, $iv, $data );
+    $errCode = $pc->decryptData($encryptedData, $iv, $data);
 
     if ($errCode !== 0) {
         return json(ret_message("encryptDataNotMatch"));
@@ -88,10 +88,10 @@ class Login extends Base{
              
              return array("role"=>1,$data,'wid'=>$s -> openId);
     }
-}else {
-    $data = db("assignment")->select( );
-    return array("role"=>2,$data,'wid'=>$s -> openId);
-}
+    }else {
+        $data = db("assignment")->select( );
+        return array("role"=>2,$data,'wid'=>$s -> openId);
+    }
 
    
     }
