@@ -9,8 +9,8 @@ class ComposerStaticInitf9a4edff7ca5d83a52a9242e688ac24a
     public static $files = array (
         '9b552a3cc426e3287cc811caefa3cf53' => __DIR__ . '/..' . '/topthink/think-helper/src/helper.php',
         '1cfd2761b63b0a29ed23657ea394cb2d' => __DIR__ . '/..' . '/topthink/think-captcha/src/helper.php',
-        'cc56288302d9df745d97c934d6a6e5f0' => __DIR__ . '/..' . '/topthink/think-queue/src/common.php',
         'ddc3cd2a04224f9638c5d0de6a69c7e3' => __DIR__ . '/..' . '/topthink/think-migration/src/config.php',
+        'cc56288302d9df745d97c934d6a6e5f0' => __DIR__ . '/..' . '/topthink/think-queue/src/common.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -75,11 +75,22 @@ class ComposerStaticInitf9a4edff7ca5d83a52a9242e688ac24a
         ),
     );
 
+    public static $prefixesPsr0 = array (
+        'P' => 
+        array (
+            'PHPExcel' => 
+            array (
+                0 => __DIR__ . '/..' . '/phpoffice/phpexcel/Classes',
+            ),
+        ),
+    );
+
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
             $loader->prefixLengthsPsr4 = ComposerStaticInitf9a4edff7ca5d83a52a9242e688ac24a::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInitf9a4edff7ca5d83a52a9242e688ac24a::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInitf9a4edff7ca5d83a52a9242e688ac24a::$prefixesPsr0;
 
         }, null, ClassLoader::class);
     }
