@@ -12,14 +12,14 @@
 return [
     // 数据库类型
     'type'            => 'mysql',
-    'hostname'        => '114.115.185.173',
+    'hostname'        => '*************',
 
     // 数据库名
-    'database'        => 'potato',
+    'database'        => '************',
     // 用户名
-    'username'        => 'psydev',
+    'username'        => '*************',
     // 密码
-    'password'        => '17psy@sspku',
+    'password'        => '***********',
     // 端口
     'hostport'        => '',
     // 连接dsn
